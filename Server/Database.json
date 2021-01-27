@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "FirstName": "vineeta",
+      "LastName": "suryan",
+      "Phone": "9953356793",
+      "Email": "vineet@gmail.com",
+      "Password": "fdsffgfd",
+      "id": 1
+    },
+    {
+      "FirstName": "vikas",
+      "LastName": "kumar",
+      "Phone": "00438578454",
+      "Email": "vikas@gmail.in",
+      "Password": "34fdgrtgfdgfd",
+      "id": 2
+    },
+    {
+      "FirstName": "Rahul",
+      "LastName": "kumar",
+      "Phone": "00438578454",
+      "Email": "Rahul@gmail.com",
+      "Password": "fdegffd",
+      "id": 3
+    }
+  ]
+}

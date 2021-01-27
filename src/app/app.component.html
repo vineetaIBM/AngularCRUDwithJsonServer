@@ -1,0 +1,53 @@
+<div class="container">
+  <form #formData ="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">First Name</label>
+      <input type="email" class="form-control" name ="FirstName" aria-describedby="emailHelp" [(ngModel)]="userObj.FirstName">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input type="email" class="form-control" name="LastName" aria-describedby="emailHelp" [(ngModel)]="userObj.LastName">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Phone No.</label>
+      <input type="email" class="form-control" name="Phone" aria-describedby="emailHelp" [(ngModel)]="userObj.Phone"> 
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" [(ngModel)]="userObj.Email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="Password" [(ngModel)]="userObj.Password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="AddUser(formData.value)" *ngIf="!IsEdit">Submit</button>
+    <button type="submit" class="btn btn-info" *ngIf="IsEdit" (click)="updateuser()">Update</button>
+  </form>
+  <hr>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of allusers">
+          <td>{{user.FirstName}}</td>
+          <td>{{user.LastName}}</td>
+          <td>{{user.Mobile}}</td>
+          <td>{{user.Email}}</td>
+          <td>{{user.Password}}</td>
+          <td><button (click)="editUser(user)" class="btn btn-warning">Edit</button></td>
+          <td><button (click)="deleteUser(user)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
